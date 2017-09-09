@@ -1,0 +1,6 @@
+# SymbolTableOptimization
+UCLA CS32 Project 4 Symbol Table
+---
+Main Concepts : Data Structures (Hash Tables), Runtime Complexity, IO form streams (stringstream and openfile) 
+---
+General: This project focused on developing from a correct but ineficient implementation of a symbol table, into an even more efficient implementation. A symbol table looks at symbols in a body of code, and checks if there are any redeclarations of the same symbol in a given scope level. This is important in modern compilers because we shouldn't try to redefine a unique symbol in the same scope, but we must also keep track and be allowed to redefine a unique symbol in a different scope level. Initially, this was implemented with a vector which has a O(N) complexity for searching, inserting, and deleting. This may not seem bad until we consider huge files (example file to test this with can be with a 2MB 2 million symbols .txt file) which will take a lot longer than it needs to be. However, with a closed hash table (bucket size of 20,000), the runtime average can be improved to a O(1) for searching, inserting, and deleting with a worst case of O(N) with low constant of proportionality, which is significantly better than the case of O(N) for big sample sizes.
